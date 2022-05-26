@@ -46,7 +46,7 @@ file=$2
 while IFS= read -r password_from_file; do
     printf '%s\n' "$password_from_file"
 done < "$file"
-if [ ${#password_from_file}  ] ; then
+if [ $? -eq 0 ] ; then
 validate $password_from_file
 else
 printf "${Red} Please specify a filepath along the -f <'./filepath>${NC}\n"
