@@ -42,9 +42,9 @@ fi
 case $1 in
 "-f" )
 file=$2
-# password_from_file=$(<$2) not working on some tests! trying the following instead of getopst:
+# password_from_file=$(<$2) not working on some tests! trying the following instead of getopts:
 while IFS= read -r password_from_file; do
-    printf '%s\n' "$password_from_file"
+    printf "$password_from_file"
 done < "$file"
 if [ $? -eq 0 ] ; then
 validate $password_from_file
