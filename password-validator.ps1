@@ -1,5 +1,5 @@
 #! bin/pwsh
-Clear-Host
+# Clear-Host
 
 $p1 = $args[0]
 $filepath = $args[1]
@@ -14,12 +14,13 @@ If ($p1 -eq '-f') {
         Exit 1
     }
     Else {
-        $len = $filepath.tostring().Length
-        $p1 = $filepath
+        $p1 = Get-Item -Path $filepath | Get-Content -Tail 1
+        $len = $p1.tostring().Length
     }
 }
 
-If ($len -lt $minLength) {
+If ($len -lt $minLength ) {
+    write-host $p1
     write-host "Password on file is too short, at least $minLength characters" -ForegroundColor Red
     Exit 1
 }
