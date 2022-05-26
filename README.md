@@ -1,9 +1,12 @@
 # password-validator
 
+## Sela Devops week 2 project submission:
+
+Password validation script using bash.
+
 ![my_devops](my_devops.jpg?raw=true?style=centerme "draw by John")
 
-## Sela project week 2:
-
+instructions summery:
 create a password validation script-
 the script will be supplied with an argument - the password.
 that argument will be checked for complexity:
