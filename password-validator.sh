@@ -4,7 +4,7 @@
 ## DESCRIPTION: a simple password validator script to check password complexity.
 ## AUTHOR: Jonathan Moguillansky- https://www.johnmogi.com
 
-min_length=10 # avoiding magic number to set minimum amount of characters.
+min_length=1 # avoiding magic number to set minimum amount of characters.
 # colors for terminal messages:
 Red='\033[0;31m'        # Red 
 Green='\033[0;32m'      # Green
@@ -18,22 +18,28 @@ if [ ${#1} -lt $min_length ]; then
     exit 1
 fi
 
-echo "$1" | grep -Eq '.*[0-9]' 
-if [ $? -eq 1 ] ; then
+if [[ ! $1 =~ '.*[0-9]' ]]; then
     printf "${Red}Try again... \nPassword must contain at least one number${NC}\n"
-    exit 1
+    exit 1;
 fi
-
-echo "$1" | grep -Eq '.*[a-z]' 
-if [ $? -eq 1 ] ; then
-    printf "${Red}Try again... \nPassword must contain at least one small letter${NC}\n"
-    exit 1
+if [[  $1 =~ '.*[a-z]' ]]; then
+     printf "${Red}Try again... \nPassword must contain at least one small letter${NC}\n"
+    exit 1;
 fi
+if [[  $1 =~ '.*[A-Z]' ]]; then
+     printf "${Red}Try again... \nPassword must contain at least one capital letter${NC}\n"
+    exit 1;
 
-echo "$1" | grep -Eq '.*[A-Z]'
-if [ $? -eq 1 ] ; then
-    printf "${Red}Try again... \nPassword must contain at least one capital letter${NC}\n"
-    exit 1
+# echo "$1" | grep -Eq '.*[a-z]' 
+# if [ $? -eq 1 ] ; then
+#     printf "${Red}Try again... \nPassword must contain at least one small letter${NC}\n"
+#     exit 1
+# fi
+
+# echo "$1" | grep -Eq '.*[A-Z]'
+# if [ $? -eq 1 ] ; then
+#     printf "${Red}Try again... \nPassword must contain at least one capital letter${NC}\n"
+#     exit 1
 fi
 }
 
