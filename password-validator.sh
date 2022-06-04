@@ -1,5 +1,5 @@
 
-#! /bin/bash
+#!/bin/bash
 
 ## DESCRIPTION: a simple password validator script to check password complexity.
 ## AUTHOR: Jonathan Moguillansky- https://www.johnmogi.com
