@@ -23,9 +23,15 @@ validate (){
 
 case $1 in
 *[0-9]*)
-echo 'good';;
-*[a-z]*)
-echo 'good';;
+if [[ ! $1 =~ [a-z] ]]; then
+    echo 'bad a'
+elif [[ $1 =~ [A-Z] ]]; then
+        echo 'bad A'
+else
+    echo 'good a'
+
+fi
+echo 'good 0';;
 *)
 echo 'bad'
 ;;
