@@ -21,28 +21,45 @@ fi
 
 validate (){ 
 
-if [[ $1 =~ [0-9] ]]; then
-    valid=0
-else
-    printf "${Red}Password must contain at least one number${NC}\n"
-fi
+case $1 in
+*[0-9]*)
+echo 'good';;
+*[a-z]*)
+echo 'good';;
+*)
+echo 'bad'
+;;
+esac 
 
-if [[ $1 =~ [a-z] ]]; then
-    valid=0
-else
-     printf "${Red}Password must contain at least one small character${NC}\n"
-    valid=1
-fi
+# if [[ $1 =~ [0-9] ]]; then
+#     valid=0
+# else
+#     printf "${Red}Password must contain at least one number${NC}\n"
+#     valid=1
+# fi
 
-if [[ $1 =~ [A-Z] ]]; then
-    valid=0
-else
-     printf "${Red}Password must contain at least one capital character${NC}\n"
-     valid=1
-fi
+# if [[ $1 =~ [a-z] ]]; then
+#     valid=0
+# else
+#      printf "${Red}Password must contain at least one small character${NC}\n"
+#     valid=1
+# fi
+
+# if [[ $1 =~ [A-Z] ]]; then
+#     valid=0
+# else
+#      printf "${Red}Password must contain at least one capital character${NC}\n"
+#      valid=1
+# fi
 
 
-echo $valid
+# if [[ $valid -eq 1 ]]; then
+#      printf "${Red} Try again... ${NC}\n"
+#     exit 0
+#     else
+# printf "${Green}success${NC}password is secured\n"
+
+# fi
 
 }
 
@@ -69,11 +86,4 @@ validate $1
 esac 
 
 
-if [[ $valid -eq 1 ]]; then
-     printf "${Red} Try again... ${NC}\n"
-    exit 0
-    else
-printf "${Green}success${NC}password is secured\n"
-
-fi
 exit 0
