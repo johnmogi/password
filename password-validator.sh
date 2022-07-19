@@ -2,61 +2,68 @@
 #! /bin/bash
 
 ## DESCRIPTION: a simple password validator script to check password complexity.
+## FEATURE: add an -f flag with a password inside a file to check all passwords in the file.
 ## AUTHOR: Jonathan Moguillansky- https://www.johnmogi.com
 
-min_length=10 # avoiding magic number to set minimum amount of characters.
+min_length=9
 # colors for terminal messages:
 Red='\033[0;31m'        # Red 
 Green='\033[0;32m'      # Green
 NC='\033[0m '           # No Color
 
-# validate function tests password string for complexity: 
-# to ensure exit code I'm using echo insted of plain checks so that exit codes will return upon each check.
 validate (){ 
+
+# exit the program if no argument supplied or the argument lenght is less than the minimum length:
 if [ ${#1} -lt $min_length ]; then
-    printf "${Red}Try again... \nPassword must contain at least $min_length characters${NC}\n"
-    exit 1
+printf "${Red}Try again... \nPassword on file is too short, there should be at least $min_length characters${NC}\n"
+exit 1;
 fi
-
-echo "$1" | grep -Eq '.*[0-9]' 
-if [ $? -eq 1 ] ; then
+# check for at least one digit:
+if ! [[ $1 =~ [[:digit:]] ]]; 
+then
     printf "${Red}Try again... \nPassword must contain at least one number${NC}\n"
-    exit 1
-fi
-
-echo "$1" | grep -Eq '.*[a-z]' 
-if [ $? -eq 1 ] ; then
-    printf "${Red}Try again... \nPassword must contain at least one small letter${NC}\n"
-    exit 1
-fi
-
-echo "$1" | grep -Eq '.*[A-Z]'
-if [ $? -eq 1 ] ; then
+    exit 1;
+# check for at least one uppercase letter:
+elif ! [[ $1 =~ [A-Z]  ]]; 
+then
     printf "${Red}Try again... \nPassword must contain at least one capital letter${NC}\n"
-    exit 1
+    exit 1;
+# check for at least one lowercase letter:
+elif ! [[ $1 =~ [a-z]  ]]; 
+then
+    printf "${Red}Try again... \nPassword must contain at least one small letter${NC}\n"
+    exit 1;
 fi
-}
+}    
+
+
+
 
 # check if the -f flag is set, if it does, run validate on password file.
 # exit the program if no argument supplied
 case $1 in
 "-f" )
-file=$2
-# password_from_file=$(<$2) not working on some tests! trying the following instead of getopts:
-while IFS= read -r password_from_file; do
-    printf "$password_from_file"
-done < "$file"
-if [ $? -eq 0 ] ; then
-validate $password_from_file
-else
-printf "${Red} Please specify a filepath along the -f <'./filepath>${NC}\n"
-exit 1
-fi
+
+
+while getopts "f:" OPTION; do
+        case "$OPTION" in
+                f)
+                PASSWORD=$(cat "$OPTARG")
+                validate $PASSWORD
+                ;;
+                \?)
+                printf "${Red} Please specify a filepath along the -f <'./filepath>${NC}\n"
+                exit 1
+                ;;
+
+        esac
+done
+
 ;;
 *)
 validate $1
 ;;
 esac 
 
-printf "${Green}success${NC}password is secured\n"
+printf "${Green}success:${NC}password is secure\n"
 exit 0
