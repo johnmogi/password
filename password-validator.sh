@@ -10,7 +10,7 @@ Red='\033[0;31m'        # Red
 Green='\033[0;32m'      # Green
 NC='\033[0m '           # No Color
 
-# exit the program if no argument supplied:
+# exit the program if no argument supplied or the argument lenght is less than the minimum length:
 if [ ${#1} -lt $min_length ]; then
 printf "${Red}Try again... \nPassword on file is too short, there should be at least $min_length characters${NC}\n"
 exit 1;
