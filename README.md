@@ -25,11 +25,13 @@ Password must contain at least one capital letter
 
 4. repeat validation attempts until all checks pass
 
+
 ## additional info:
 a password validation script-
 the script will be supplied with an argument - the password.
 that argument will be checked for complexity:
 small letters, capital, numbers and minimum lengh (10)
+// using echo $? to validate the exit status codes.
 
 added branches:
 Password validation using bash.
