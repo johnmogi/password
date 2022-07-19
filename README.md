@@ -2,16 +2,32 @@
 
 ## Sela Devops week 2 project submission:
 
-Password validation script using bash.
+<h1>Password validation script using bash.</h1>
 
-![my_devops](my_devops.jpg?raw=true?style=centerme "draw by John")
+![validation](password_validator1.png?raw=true?style=centerme "passed validation")
+<h3>how to run this script:</h3>
 
-instructions summery:
-create a password validation script-
+1. git clone this link into a new folder:
+    git clone https://github.com/johnmogi/password.git
+2. from the terminal on folder run the script in the following manner:
+    ./password-validator.sh
+the return message should look like:
+Try again... 
+Password on file is too short, there should be at least 9 characters 
+3. supply an argument to the validation, example:
+    ./password-validator.sh 123456789
+now the return message should look like:
+Try again... 
+Password must contain at least one capital letter
+4. repeat validation attempts until all checks pass
+
+## additional info:
+a password validation script-
 the script will be supplied with an argument - the password.
 that argument will be checked for complexity:
-small letters, capital, numbers and minimum lenght (10)
+small letters, capital, numbers and minimum lengh (10)
 
+added branches:
 Password validation using bash.
 [feature] branch - same script with the anbility to retrieve password from a file.
 [powershell] branch - same script for powershell
@@ -19,3 +35,5 @@ Password validation using bash.
 Cheers... john.
 
 “Intelligence is the ability to avoid doing work, yet getting the work done.” ... Linus Torvalds
+
+![my_devops](my_devops.jpg?raw=true?style=centerme "draw by John")
