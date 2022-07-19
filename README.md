@@ -11,22 +11,17 @@
     git clone https://github.com/johnmogi/password.git
 2. from the terminal on folder run the script in the following manner:
     ./password-validator.sh 
-<br/>
+
 the return message should look like:
-<br/>
 Try again... 
-<br/>
 Password on file is too short, there should be at least 9 characters 
 
 3. supply an argument to the validation, example:
     ./password-validator.sh 123456789
-<br/>
+
 now the return message should look like:
-<br/>
 Try again... 
-<br/>
 Password must contain at least one capital letter
-<br/>
 
 4. repeat validation attempts until all checks pass
 
