@@ -1,22 +1,42 @@
-#! bin/pwsh
+#PowerShell 
 # Clear-Host
 
 $p1 = $args[0]
 $filepath = $args[1]
 
-$minLength = 10
+$minLength = 1
 If ($p1) {
     $len = $p1.tostring().Length
 }
+
+# Checking if we got have to take the pass from a file and if so we take it
+Param
+    (
+        [string]$f
+        
+    )
+
+if ($f -match '.txt') {
+    
+    $p1=Get-Content -Path $f
+
+}else {
+    
+    $p1=$f
+}
+
+
+write-host $p1
 If ($p1 -eq '-f') {
-    If ($filepath.Length -lt 1 ) {
+    If (($f).Length -lt 1 ) {
         write-host "Please specify a filepath along the -f <'./filepath>" -ForegroundColor Red
         Exit 1
     }
-    Else {
-        $p1 = Get-Item -Path $filepath | Get-Content -Tail 1
-        $len = $p1.tostring().Length
-    }
+
+    # $p1 = Get-Item -Path $filepath | Get-Content -Tail 1
+    # $len = $p1.tostring().Length
+    # write-host $len
+
 }
 
 If ($len -lt $minLength ) {
