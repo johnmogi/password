@@ -2,7 +2,7 @@ import sys
 from colorama import Fore
 from colorama import Style
 
-min_length=2
+min_length=10
 p1 =  str(sys.argv[1])
 
 if len(p1) < min_length:
@@ -24,11 +24,6 @@ def validate(param):
         print(f'Try again... \n {Fore.RED}Password must contain at least one capital letter{Style.RESET_ALL}')
         exit(1)
 
-
 validate(p1)
 
 print(f'success: \n {Fore.GREEN} password is secure{Style.RESET_ALL} ')
-
-
-
-# if min_length <
