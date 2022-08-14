@@ -6,7 +6,7 @@ min_length=2
 p1 =  str(sys.argv[1])
 
 if len(p1) < min_length:
-    print('the password is too short')
+    printf('Try again... \nPassword on file is too short, there should be at least ${min_length} characters')
 # else:
 #     print('the password is ok')
 
