@@ -10,7 +10,8 @@ if len(p1) < min_length:
 
 def validate(param):
     a = any(chr.isdigit() for chr in param)
-    print(a)
+    if a:
+        print(a)
 
 validate(p1)
 
