@@ -5,7 +5,12 @@
 <h1>Password validation script using bash.</h1>
 
 <a href="https://www.youtube.com/watch?v=CbTpxKKyyNg">
-Come see a short video describing this project </a>
+Come see a short video describing this project :
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/CbTpxKKyyNg/0.jpg)](https://www.youtube.com/watch?v=CbTpxKKyyNg" "Portfolio Video #1 : Password Validator Project
+")
+
+</a>
 <br/>
 
 ![validation](password_validator1.png?raw=true?style=centerme "passed validation")
