@@ -4,10 +4,10 @@
 
 <h1>Password validation script using bash.</h1>
 
-<a href="https://www.youtube.com/watch?v=CbTpxKKyyNg">
+<a href="https://www.youtube.com/watch?v=CbTpxKKyyNg" target="_blank">
 Come see a short video describing this project :
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/CbTpxKKyyNg/0.jpg)](https://www.youtube.com/watch?v=CbTpxKKyyNg" "Portfolio Video #1 : Password Validator Project
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/CbTpxKKyyNg/0.jpg)](https://www.youtube.com/watch?v=CbTpxKKyyNg" target="\_blank" "Portfolio Video #1 : Password Validator Project
 ")
 
 </a>
