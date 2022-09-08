@@ -12,7 +12,8 @@ Come see a short video describing this project :
 
 </a>
 <br/>
-<h2>successfull demonstration of the project running on the terminal in bash: </h2> <br/>
+<p>successfull demonstration of the project running on the terminal in bash: </p> <br/>
+
 ![validation](password_validator1.png?raw=true?style=centerme "passed validation")
 
 <h3>how to run this script:</h3>
