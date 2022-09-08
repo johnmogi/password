@@ -4,7 +4,7 @@
 ## DESCRIPTION: a simple password validator script to check password complexity.
 ## AUTHOR: Jonathan Moguillansky- https://www.johnmogi.com
 
-min_length=1 # avoiding magic number to set minimum amount of characters.
+min_length=9 # avoiding magic number to set minimum amount of characters.
 # colors for terminal messages:
 Red='\033[0;31m'        # Red 
 Green='\033[0;32m'      # Green
