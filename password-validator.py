@@ -27,3 +27,4 @@ def validate(param):
 validate(p1)
 
 print(f'success: \n {Fore.GREEN} password is secure{Style.RESET_ALL} ')
+exit(0)

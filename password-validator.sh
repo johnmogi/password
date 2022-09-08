@@ -19,6 +19,7 @@ fi
 validate (){ 
 # check for at least one digit:
 if ! [[ $1 =~ [[:digit:]] ]]; 
+# if ! [[ $1 =~ [0-9]  ]]; 
 then
     printf "${Red}Try again... \nPassword must contain at least one number${NC}\n"
     exit 1;
