@@ -12,7 +12,7 @@ Come see a short video describing this project :
 
 </a>
 <br/>
-<p>successfull demonstration of the project running on the terminal in bash: </p> <br/>
+<p>successfull demonstration of the project running on the terminal in bash: </p>
 
 ![validation](password_validator1.png?raw=true?style=centerme "passed validation")
 
